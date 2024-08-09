@@ -1,0 +1,23 @@
+---
+import justin from "@/assets/justin.png";
+import PageLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+
+const meta = {
+	description: "Oops! It looks like this page is lost in space!",
+	title: "Oops! You found a missing page!",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6 text-center">404 | Oops something went wrong</h1>
+	<p class="mb-8 text-center">This page doesn't exist, I know because its my site 😠</p>
+	<div class="my-4 grid justify-center">
+		<Image
+			alt="A cartoon version of justins head hes got some cool glasses and he looks bad ass"
+			class="animate-bounce mt-12"
+			loading="eager"
+			src={justin}
+		/>
+	</div>
+</PageLayout>
