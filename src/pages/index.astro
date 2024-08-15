@@ -8,10 +8,10 @@ const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const cactusTech: { desc: string; href: string; title: string }[] = [
+const techList: { desc: string; href: string; title: string }[] = [
 	{
 		desc: "A Pokemon TCG deck builder",
-		href: "",
+		href: "https://github.com/JustinTheeDude/deck-builder",
 		title: "WIP",
 	},
 ];
@@ -19,15 +19,19 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">Yo yo</h1>
-		<p class="mb-4">I'm Justin and i'm a Software Engineer trying to learn something new everyday</p>
+		<h1 class="title mb-2">Justin</h1>
+		<ul class="mb-2 text-base ps-4">
+			<li>Software Engineer.</li>
+			<li>McDouble Connoisseur.</li>
+			<li>Trying to learn something new everyday.</li>
+		</ul>
 		<SocialList />
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
 		<h2 class="title mb-4 text-xl">Things I'm Building</h2>
 		<dl class="space-y-4">
 			{
-				cactusTech.map(({ desc, href, title }) => (
+				techList.map(({ desc, href, title }) => (
 					<div class="flex flex-col gap-2 sm:flex-row">
 						<dt>
 							<span class="flex">
