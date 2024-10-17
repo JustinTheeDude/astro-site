@@ -1,7 +1,12 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const links = await getCollection("stuff");
 ---
 
 <PageLayout meta={{ title: "Cool Stuff" }}>
-    <h1>Cool Stuff</h1>
+  {!!links && links.map((link) => (
+    <a href={link.data.link}>{link.data.title}</a>
+  ))}
 </PageLayout>

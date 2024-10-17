@@ -33,4 +33,12 @@ const post = defineCollection({
 	type: "content",
 });
 
-export const collections = { post };
+const stuff = defineCollection({
+  schema: z.object({
+    link: z.string().url(),
+    title: z.string().max(60),
+  }),
+  type: "content",
+})
+
+export const collections = { post, stuff };
